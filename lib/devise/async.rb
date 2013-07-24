@@ -25,8 +25,8 @@ module Devise
     @@queue = :mailer
 
     # Defines the number of retries (for Sidekiq)
-    mattr_accessor :retries
-    @@retries = 2
+    mattr_accessor :retry
+    @@retry = 2
 
     # Defines the enabled configuration that if set to false the emails will be sent synchronously
     mattr_accessor :enabled

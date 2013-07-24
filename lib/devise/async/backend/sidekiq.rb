@@ -4,7 +4,7 @@ module Devise
       class Sidekiq < Base
         include ::Sidekiq::Worker
 
-        sidekiq_options :queue => Devise::Async.queue, :retries => Devise::Async.retries
+        sidekiq_options :queue => Devise::Async.queue, :retry => Devise::Async.retry
         def self.enqueue(*args)
           perform_async(*args)
         end
